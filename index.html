@@ -1,97 +1,35 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عداد العربات</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-        .counter-container {
-            margin: 20px 0;
-        }
-        input {
-            width: 80px;
-            padding: 5px;
-            text-align: center;
-        }
-        button {
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .count-display {
-            font-size: 24px;
-            font-weight: bold;
-            margin-left: 10px;
-        }
-    </style>
+    <title>Car Tracking App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Car Tracking</h1>
+        
+        <div class="buttons">
+            <button id="exitBtn">خروج عربة</button>
+            <button id="returnBtn">عودة عربة</button>
+        </div>
 
-    <h1>إحصائية العربات</h1>
+        <div class="stats">
+            <p>عدد العربات التي خرجت: <span id="exitedCount">0</span></p>
+            <p>عدد العربات التي عادت: <span id="returnedCount">0</span></p>
+        </div>
 
-    <div class="counter-container">
-        <label for="exitInput">خروج عربة من:</label>
-        <input type="number" id="exitInput" min="0" placeholder="إدخال رقم">
-        <button id="exitBtn">خروج عربة</button>
-        <span class="count-display" id="exitedCount">0</span>
+        <div class="end-shift">
+            <button id="endShiftBtn">إنهاء الوردية</button>
+        </div>
+
+        <div class="total">
+            <p>إجمالي الخروج: <span id="totalExit">0</span></p>
+            <p>إجمالي العودة: <span id="totalReturn">0</span></p>
+        </div>
     </div>
 
-    <div class="counter-container">
-        <label for="returnInput">عودة عربة من:</label>
-        <input type="number" id="returnInput" min="0" placeholder="إدخال رقم">
-        <button id="returnBtn">عودة عربة</button>
-        <span class="count-display" id="returnedCount">0</span>
-    </div>
-
-    <script>
-        let exitedCount = 0;
-        let returnedCount = 0;
-
-        const exitInput = document.getElementById('exitInput');
-        const returnInput = document.getElementById('returnInput');
-
-        const exitBtn = document.getElementById('exitBtn');
-        const returnBtn = document.getElementById('returnBtn');
-
-        const exitedDisplay = document.getElementById('exitedCount');
-        const returnedDisplay = document.getElementById('returnedCount');
-
-        // تحديث العداد عند إدخال رقم جديد في الخروج
-        exitInput.addEventListener('change', () => {
-            const newValue = parseInt(exitInput.value);
-            if (!isNaN(newValue) && newValue >= 0) {
-                exitedCount = newValue;
-                exitedDisplay.textContent = exitedCount;
-            }
-        });
-
-        // تحديث العداد عند إدخال رقم جديد في العودة
-        returnInput.addEventListener('change', () => {
-            const newValue = parseInt(returnInput.value);
-            if (!isNaN(newValue) && newValue >= 0) {
-                returnedCount = newValue;
-                returnedDisplay.textContent = returnedCount;
-            }
-        });
-
-        // زر خروج العربة
-        exitBtn.addEventListener('click', () => {
-            exitedCount++;
-            exitedDisplay.textContent = exitedCount;
-        });
-
-        // زر عودة العربة
-        returnBtn.addEventListener('click', () => {
-            returnedCount++;
-            returnedDisplay.textContent = returnedCount;
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
