@@ -29,3 +29,13 @@ body {
     margin-top: 20px;
     font-size: 20px;
 }
+
+/* النص الشفاف بأسفل الصفحة */
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.2); /* شفافية خفيفة */
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+}
