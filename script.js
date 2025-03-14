@@ -31,7 +31,7 @@ document.getElementById("endShiftBtn").addEventListener("click", function() {
     returnedCount = 0;
     document.getElementById("exitedCount").textContent = exitedCount;
     document.getElementById("returnedCount").textContent = returnedCount;
-    alert("تم إنهاء الوردية!");
+    alert("تم إنهاء الوردية! جميع العدادات عادت للصفر.");
 });
 
 // 🔒 حماية الموقع من النسخ وسرقة الكود
